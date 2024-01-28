@@ -14,13 +14,29 @@ struct PokemonsListView: View {
     var body: some View {
         content
             .navigationTitle("Pokefly")
+            .onAppear {
+                viewModel.loadPokemons()
+            }
     }
     
+    @ViewBuilder
     private var content: some View {
+        switch viewModel.state {
+        case .loading:
+            ProgressView()
+        case .success:
+            successView
+        default:
+            EmptyView()
+            // TODO: handle other states
+        }
+    }
+    
+    private var successView: some View {
         List {
-            ForEach(viewModel.pokemons, id: \.id) { pokemon in
+            ForEach(viewModel.pokemons) { pokemon in
                 NavigationLink {
-                    Text(pokemon.name.capitalized)
+                    PokemonDetailView(viewModel: .init(pokemonId: pokemon.apiId))
                 } label: {
                     PokemonsListItemView(pokemon: pokemon)
                 }
@@ -34,7 +50,7 @@ struct PokemonsListView: View {
                 }
         }
         .refreshable {
-            viewModel.loadPokemons()
+            viewModel.reload()
         }
     }
 }

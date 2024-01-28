@@ -31,7 +31,6 @@ struct PokemonsListItemView: View {
                 .placeholder {
                     placeholderImage
                 }
-                .indicator(.progress)
                 .transition(.fade(duration: 0.5))
                 .scaledToFill()
                 .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
@@ -48,7 +47,7 @@ struct PokemonsListItemView: View {
             Text(pokemon.name.capitalized)
                 .font(.system(size: Constants.nameFontSize, weight: .semibold))
             
-            Text(pokemon.types.joined(separator: ", "))
+            Text(pokemon.types)
                 .font(.system(size: Constants.typesFontSize, weight: .thin))
         }
     }
@@ -71,8 +70,6 @@ private extension PokemonsListItemView {
     }
 }
 
-
-
 #Preview {
-    PokemonsListItemView(pokemon: .init(name: "pikachu", apiId: 1, imageUrl: nil, types: ["electric, type2", "type3"]))
+    PokemonsListItemView(pokemon: .init(name: "pikachu", apiId: 1, imageUrl: nil, types: "Electric, type2, type3"))
 }

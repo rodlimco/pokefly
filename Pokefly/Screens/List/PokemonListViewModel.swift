@@ -22,11 +22,8 @@ class PokemonListViewModel: ObservableObject {
     }
     
     func loadPokemons() {
-        if state != .loading {
-            state = .loading
-        }
-        
         getPokemonsListUseCase.execute(offset: currentOffset)
+            .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 if case .failure = completion {
@@ -41,5 +38,14 @@ class PokemonListViewModel: ObservableObject {
                 state = .success
             }
             .store(in: &cancellables)
+    }
+    
+    func reload() {
+        if state != .loading {
+            state = .loading
+        }
+        
+        currentOffset = 0
+        loadPokemons()
     }
 }
