@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B02978E2B670ECA00A648EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B02978D2B670ECA00A648EB /* LaunchScreen.storyboard */; };
 		5B1ECC982B648C0000EFC11C /* ListPokemonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1ECC972B648C0000EFC11C /* ListPokemonMapper.swift */; };
 		5B1ECC9A2B6541AF00EFC11C /* PokemonListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1ECC992B6541AF00EFC11C /* PokemonListRepository.swift */; };
 		5B1ECC9C2B6584A900EFC11C /* PokemonDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1ECC9B2B6584A900EFC11C /* PokemonDetailService.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B02978D2B670ECA00A648EB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B1ECC972B648C0000EFC11C /* ListPokemonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPokemonMapper.swift; sourceTree = "<group>"; };
 		5B1ECC992B6541AF00EFC11C /* PokemonListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRepository.swift; sourceTree = "<group>"; };
 		5B1ECC9B2B6584A900EFC11C /* PokemonDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailService.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				5B88CDAE2B62F00D00C59CE9 /* PokeflyApp.swift */,
 				5B88CDB22B62F00F00C59CE9 /* Assets.xcassets */,
 				5B88CDB42B62F00F00C59CE9 /* Preview Content */,
+				5B02978D2B670ECA00A648EB /* LaunchScreen.storyboard */,
 			);
 			path = Pokefly;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B02978E2B670ECA00A648EB /* LaunchScreen.storyboard in Resources */,
 				5B88CDB62B62F00F00C59CE9 /* Preview Assets.xcassets in Resources */,
 				5B88CDB32B62F00F00C59CE9 /* Assets.xcassets in Resources */,
 			);
@@ -676,6 +680,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -705,6 +710,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
