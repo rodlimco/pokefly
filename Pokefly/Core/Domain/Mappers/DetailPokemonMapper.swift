@@ -12,11 +12,11 @@ enum DetailPokemonMapper {
         .init(
             id: pokemon.id,
             abilities: pokemon.abilities.map {
-                $0.ability.name
+                $0.ability.name.capitalized
             },
             moves: pokemon.moves.map { $0.move.name },
             name: pokemon.name,
-            types: pokemon.types.map { $0.type.name },
+            types: pokemon.types.map { $0.type.name.capitalized },
             imagesUrls: .init(
                 front: pokemon.sprites.frontDefault,
                 back: pokemon.sprites.backDefault,
