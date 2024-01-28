@@ -37,9 +37,7 @@ struct PokemonDetailView: View {
                 alignment: .center,
                 spacing: Constants.spacingTwenty
             ) {
-                Rectangle()
-                    .fill(Color.red)
-                    .frame(width: 200, height: 200, alignment: .center)
+                DetailImagesCarouselView(viewModel: .init(imagesUrls: viewModel.pokemon?.imagesUrls))
                 
                 VStack(
                     alignment: .leading,

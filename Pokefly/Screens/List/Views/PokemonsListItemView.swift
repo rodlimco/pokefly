@@ -29,13 +29,13 @@ struct PokemonsListItemView: View {
             WebImage(url: URL(string: imageUrl))
                 .resizable()
                 .placeholder {
-                    placeholderImage
+                    PokemonPlaceholder(size: Constants.imageSize)
                 }
                 .transition(.fade(duration: 0.5))
                 .scaledToFill()
                 .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
         } else {
-            placeholderImage
+            PokemonPlaceholder(size: Constants.imageSize)
         }
     }
     
@@ -50,13 +50,6 @@ struct PokemonsListItemView: View {
             Text(pokemon.types)
                 .font(.system(size: Constants.typesFontSize, weight: .thin))
         }
-    }
-    
-    private var placeholderImage: some View {
-        Image("listImagePlaceholder")
-            .resizable()
-            .scaledToFit()
-            .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
     }
 }
 
