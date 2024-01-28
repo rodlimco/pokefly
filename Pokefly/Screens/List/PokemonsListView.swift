@@ -19,9 +19,13 @@ struct PokemonsListView: View {
     private var content: some View {
         List {
             ForEach(viewModel.pokemons, id: \.id) { pokemon in
-                PokemonsListItemView(pokemon: pokemon)
+                NavigationLink {
+                    Text(pokemon.name.capitalized)
+                } label: {
+                    PokemonsListItemView(pokemon: pokemon)
+                }
             }
-            
+
             ProgressView()
                 .id(UUID())
                 .frame(maxWidth: .infinity, alignment: .center)

@@ -11,7 +11,9 @@ import SwiftUI
 struct PokeflyApp: App {
     var body: some Scene {
         WindowGroup {
-            PokemonsListView()
+            NavigationStack {
+                PokemonsListView()
+            }
         }
     }
 }
