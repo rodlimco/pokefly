@@ -47,21 +47,24 @@ struct PokemonDetailView: View {
                 ) {
                     Text(viewModel.pokemon?.name.capitalized ?? "")
                         .font(.system(size: Constants.nameFontSize, weight: .semibold))
-                    sectionBuilder(title: "Abilities", content: viewModel.pokemon?.abilities ?? "")
-                    sectionBuilder(title: "Moves", content: viewModel.pokemon?.moves ?? "")
-                    sectionBuilder(title: "Type", content: viewModel.pokemon?.types ?? "")
+                    sectionBuilder(section: .abilities, content: viewModel.pokemon?.abilities ?? "")
+                    sectionBuilder(section: .moves, content: viewModel.pokemon?.moves ?? "")
+                    sectionBuilder(section: .type, content: viewModel.pokemon?.types ?? "")
                 }
             }
             .padding([.horizontal, .bottom], Constants.paddingSixteen)
         }
     }
     
-    private func sectionBuilder(title: String, content: String) -> some View {
+    private func sectionBuilder(
+        section: PokemonDetailSection,
+        content: String
+    ) -> some View {
         VStack(
             alignment: .leading,
             spacing: Constants.spacingFour
         ) {
-            Text(title)
+            Text(section.title)
                 .font(.system(size: Constants.sectionFontSize, weight: .semibold))
             
             Text(content)
