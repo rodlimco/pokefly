@@ -22,7 +22,7 @@ struct PokemonsListView: View {
     private var content: some View {
         List {
             ForEach(viewModel.pokemons, id: \.id) { pokemon in
-                Text(pokemon.name.capitalized)
+                PokemonsListItemView(pokemon: pokemon)
             }
             
             ProgressView()
