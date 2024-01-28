@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PokemonsListItemView: View {
     
@@ -16,24 +17,61 @@ struct PokemonsListItemView: View {
     }
     
     private var content: some View {
-        HStack(
-            alignment: .center,
-            spacing: 10
-        ) {
-            Rectangle()
-                .fill(.red)
-                .frame(width: 40, height: 40)
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(pokemon.name.capitalized)
-                    .font(.system(size: 16, weight: .semibold))
-                
-                Text(pokemon.types.joined(separator: ", "))
-                    .font(.system(size: 12, weight: .thin))
-            }
+        HStack(spacing: Constants.horizontalSpacing) {
+            pokemonImage
+            pokemonInfo
         }
     }
+    
+    @ViewBuilder
+    private var pokemonImage: some View {
+        if let imageUrl = pokemon.imageUrl {
+            WebImage(url: URL(string: imageUrl))
+                .resizable()
+                .placeholder {
+                    placeholderImage
+                }
+                .indicator(.progress)
+                .transition(.fade(duration: 0.5))
+                .scaledToFill()
+                .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
+        } else {
+            placeholderImage
+        }
+    }
+    
+    private var pokemonInfo: some View {
+        VStack(
+            alignment: .leading,
+            spacing: Constants.verticalSpacing
+        ) {
+            Text(pokemon.name.capitalized)
+                .font(.system(size: Constants.nameFontSize, weight: .semibold))
+            
+            Text(pokemon.types.joined(separator: ", "))
+                .font(.system(size: Constants.typesFontSize, weight: .thin))
+        }
+    }
+    
+    private var placeholderImage: some View {
+        Image("listImagePlaceholder")
+            .resizable()
+            .scaledToFit()
+            .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
+    }
 }
+
+private extension PokemonsListItemView {
+    enum Constants {
+        static let nameFontSize: CGFloat = 16
+        static let typesFontSize: CGFloat = 12
+        static let imageSize: CGSize = .init(width: 50, height: 50)
+        static let horizontalSpacing: CGFloat = 10
+        static let verticalSpacing: CGFloat = 4
+    }
+}
+
+
 
 #Preview {
     PokemonsListItemView(pokemon: .init(name: "pikachu", apiId: 1, imageUrl: nil, types: ["electric, type2", "type3"]))

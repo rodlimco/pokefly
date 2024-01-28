@@ -14,9 +14,6 @@ struct PokemonsListView: View {
     var body: some View {
         content
             .navigationTitle("Pokefly")
-            .onAppear {
-                viewModel.loadPokemons()
-            }
     }
     
     private var content: some View {
@@ -26,6 +23,7 @@ struct PokemonsListView: View {
             }
             
             ProgressView()
+                .id(UUID())
                 .frame(maxWidth: .infinity, alignment: .center)
                 .onAppear {
                     viewModel.loadPokemons()
