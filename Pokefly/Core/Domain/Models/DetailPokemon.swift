@@ -9,10 +9,10 @@ import Foundation
 
 struct DetailPokemon {
     let id: Int
-    let abilities: [String]
-    let moves: [String]
+    let abilities: String
+    let moves: String
     let name: String
-    let types: [String]
+    let types: String
     let imagesUrls: DetailPokemonImages
     
     struct DetailPokemonImages {

@@ -13,7 +13,7 @@ enum ListPokemonMapper {
             name: apiPokemon.name,
             apiId: apiPokemon.id,
             imageUrl: apiPokemon.sprites.frontDefault,
-            types: apiPokemon.types.map { $0.type.name.capitalized }
+            types: apiPokemon.types.map { $0.type.name.capitalized }.joined(separator: ", ")
         )
     }
     

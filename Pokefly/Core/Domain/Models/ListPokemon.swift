@@ -11,7 +11,7 @@ struct ListPokemon: Identifiable {
     let name: String
     let apiId: Int
     let imageUrl: String?
-    let types: [String]
+    let types: String
     
     var id: String {
         UUID().uuidString
