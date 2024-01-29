@@ -18,7 +18,7 @@ The app retrieves data from the [PokeAPI](https://pokeapi.co) and provides a use
 - **Offline Caching**: to be implemented.
 
 
-## Technical Aspects
+## Technical Aspects
 
 - **Development Environment**:
 	- Developed using Xcode version 15.1.
