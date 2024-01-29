@@ -19,6 +19,7 @@ The app retrieves data from the [PokeAPI](https://pokeapi.co) and provides a use
 
 
 ## Technical Aspects
+
 - **Development Environment**:
 	- Developed using Xcode version 15.1.
 - **Frameworks**:
@@ -36,11 +37,13 @@ The app retrieves data from the [PokeAPI](https://pokeapi.co) and provides a use
 	- Implemented unit tests for the networking layer.
 
 ## Installation
+
 Clone the repository.
 Open the project in Xcode.
 Build and run the app on your preferred simulator or device.
 
 ## Contact
+
 For any inquiries, please contact [Rodrigo Limpias](www.linkedin.com/in/rodrigolimpiascossio).
 
 
